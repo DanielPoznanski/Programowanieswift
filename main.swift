@@ -1,5 +1,4 @@
 
-
 import Foundation
 
 
@@ -108,7 +107,7 @@ pracownik2.wyswietl()
 */
 
 //Zadanie 10.3
-enum kierunekType:String{
+enum Kierunek:String{
 case informatyka = "informatyka"
 case fizyka = "fizyka"
 case bankowosc = "bankowosc"
@@ -118,70 +117,122 @@ case ekonomia = "ekonomia"
 
 class Student: Osoba{
     let nr_indeksu:Int
-    var kierunek:kierunekType
+    var kierunek:Kierunek
     let rok_studiow:Int
-    let o1 : Double
-    let o2 : Double
-    let o3 : Double
-    let o4 : Double
-    let o5 : Double
+    var oceny: [Double] = [Double](repeating: 0, count:5)
+
     
-    init(imie: String, nazwisko: String , rok_urodzenia: Int, nr_indeksu:Int, kierunek: kierunekType, rok_studiow:Int, o1:Double, o2:Double,o3:Double,o4:Double,o5:Double){
+    init(imie: String, nazwisko: String , rok_urodzenia: Int, nr_indeksu:Int, kierunek: Kierunek, rok_studiow:Int, oceny: [Double]){
         self.nr_indeksu=nr_indeksu
         self.kierunek=kierunek
         self.rok_studiow=rok_studiow
-            self.o1=o1
-            self.o2=o2
-            self.o3=o3
-            self.o4=o4
-            self.o5=o5
+        self.oceny=oceny
         
         super.init(imie:imie , nazwisko:nazwisko , rok_urodzenia:rok_urodzenia)
         }
         
         
-        func sprawdz()->Bool{
-        if(o1>=2.0 && o1<=5.0 && o2>=2.0 && o2<=5.0 && o3>=2.0 && o3<=5.0 && o4>=2.0 && o4<=5.0 && o5>=2.0 && o5<=5.0) {return true}
-        else {return false}
-        }
-        
-        
-        func srednia()->Double{
-        if sprawdz() == true {
-             return (o1+o2+o3+o4+o5)/5
+        func srednia() -> Double {
+        var suma: Double
+        suma = 0
+        for ocena in oceny {
+                suma = suma + ocena
             }
-            else{
-                return 0
-            }
+            return (Double)(suma/5)
         }
     
         
         override func wyswietl(){
-        if sprawdz() == true
-       {
-        super.wyswietl()
-        print("nr_indeksu: \(nr_indeksu)")
-        print("Kierunek: \(kierunek)")
-        print("Rok Studiow: \(rok_studiow)")
-        print("Ocena 1: \(o1)")
-        print("Ocena 2: \(o2)")
-        print("Ocena 3: \(o3)")
-        print("Ocena 4: \(o4)")
-        print("Ocena 5: \(o5)")
-            }
-            else{
-                print("Hiuston mamy problem")
-            }
-        }
-    
+    print("""
+    Imie: \(imie)
+    Nazwisko: \(nazwisko)
+    Wiek: \(wiek())
+    Index: \(nr_indeksu)
+    Kierunek: \(kierunek.rawValue)
+    Rok studiów: \(rok_studiow)
+    Oceny: \(oceny)
+    Srednia: \(srednia())
+    """)        }
     }
-    
+var student = Student(imie : "Daniel" , nazwisko: "Poznanski", rok_urodzenia: 1997, nr_indeksu: 94257 , kierunek:Kierunek.informatyka , rok_studiow: 3, oceny: [4,5,3,4,4])
+
+student.wyswietl()
+print(student.srednia())
+
 let ilosc = Int(readLine()!)
 
-var studenci : [Student]=[]
+func podajOceny() -> [Double] {
 
+var oceny: [Double] = [Double](repeating: 0, count: 5)
+let ocenyDostepne = [2.0,3.0,3.5,4.0,4.5,5.0]
+var ocena: Double?
+var flag: Bool = false
 
-for _ in 0..<ilosc!{
+    for j in 0..<5{
 
-studenci.append(Student(imie: imie!, nazwisko: nazwisko!, rok_urodzenia: rok_urodzenia!, index: index!, kierunek: kierunek.Informatyka, rok_studiow: rok_studiow!, oceny: oceny))
+        print("Podaj", j+1, " ocene:", terminator:"")
+        ocena = Double(readLine()!)
+
+        if ocenyDostepne.contains(ocena!) {
+            flag = true
+        }else{
+            flag = false
+        }
+        while !flag {
+        print("Podaj ocene z zakresu od 2 do 5 ")
+            ocena = Double(readLine()!)
+            if ocenyDostepne.contains(ocena!) {
+                flag = true
+            }
+        }
+        oceny[j] = ocena!
+    }
+    return oceny
 }
+
+func podajStudentow()-> [Student]{
+
+    print("Podaj liczbe studentow: ", terminator:"")
+    var liczba_studentow: Int?
+    var imie, nazwisko: String?
+    var rok_urodzenia, nr_indeksu, rok_studiow, kierunek: Int?
+    var studenci: [Student] = []
+
+       liczba_studentow = Int(readLine()!)
+       for _ in 0..<liczba_studentow!{
+           print("Podaj imie:", terminator:"")
+           imie = String(readLine()!)
+           print("Podaj nazwisko:", terminator:"")
+           nazwisko = String(readLine()!)
+           print("Podaj rok urodzenia:", terminator:"")
+           rok_urodzenia = Int(readLine()!)
+           print("Podaj nr indeksu:", terminator:"")
+           nr_indeksu = Int(readLine()!)
+           print("Podaj rok studiów:", terminator:"")
+           rok_studiow = Int(readLine()!)
+           print("Podaj kierunek (1. Informatyka, 2.Fizyka, 3.Bankowosc, 4.Ekonomia):", terminator:"")
+           kierunek = Int(readLine()!)
+
+           let oceny: [Double] = podajOceny()
+
+           if(kierunek! == 1){
+           studenci.append(Student(imie: imie!, nazwisko: nazwisko!, rok_urodzenia: rok_urodzenia!, nr_indeksu: nr_indeksu!, kierunek: Kierunek.informatyka, rok_studiow: rok_studiow!, oceny: oceny))
+           } else {
+               studenci.append(Student(imie: imie!, nazwisko: nazwisko!, rok_urodzenia: rok_urodzenia!, nr_indeksu:nr_indeksu!, kierunek: Kierunek.ekonomia, rok_studiow: rok_studiow!, oceny: oceny))
+           }
+       }
+
+    return studenci
+}
+    func studenci() {
+    let studenci: [Student] = podajStudentow()
+    var kierunek_s: String?
+    print("Podaj kierunek ktory chcesz wyswietlic:", terminator:"")
+    kierunek_s = String(readLine()!)
+    for i in studenci{
+        if (i.kierunek.rawValue == kierunek_s){
+            i.wyswietl()        }
+    }
+}
+
+studenci()
