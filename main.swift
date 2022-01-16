@@ -1,3 +1,5 @@
+
+
 import Foundation
 
 
@@ -41,7 +43,6 @@ else{
 osoba1.wyswietl()
 osoba2.wyswietl()
 }
-
 */
 
 //zad 10.2
@@ -82,7 +83,7 @@ class Pracownik : Osoba{
         return  2022 - rok_zatrudnienia
         }
         func pensja()->Double{
-        return stawka*wypracowane_godziny 
+        return stawka*wypracowane_godziny
     }
         override func wyswietl(){
         super.wyswietl()
@@ -95,15 +96,13 @@ class Pracownik : Osoba{
         
         
 }
-/*    
+/*
 var pracownik1 = Pracownik(imie:"Daniel", nazwisko:"Poznanski", rok_urodzenia: 1997, rok_zatrudnienia: 2020, stanowisko:stanowiskoType.kierownik, stawka:60, wypracowane_godziny: 200, nazwa_firmy: "Combany" )
 var pracownik2 = Pracownik(imie:"Klaudia", nazwisko:"Poznanska", rok_urodzenia: 1998, rok_zatrudnienia: 2021, stanowisko:stanowiskoType.programista , stawka:50, wypracowane_godziny: 200, nazwa_firmy: "Combany" )
 print ("Lata pracy pracownik1: \(pracownik1.lata_pracy())")
 print ("Lata pracy pracownik2: \(pracownik2.lata_pracy())")
-
 print ("Pensja pracownik1: \(pracownik1.pensja())")
 print ("Pensja pracownik2: \(pracownik2.pensja())")
-
 pracownik1.wyswietl()
 pracownik2.wyswietl()
 */
@@ -158,7 +157,7 @@ class Student: Osoba{
     
         
         override func wyswietl(){
-        if sprawdz() == true 
+        if sprawdz() == true
        {
         super.wyswietl()
         print("nr_indeksu: \(nr_indeksu)")
@@ -175,28 +174,14 @@ class Student: Osoba{
             }
         }
     
-    }    
+    }
     
-//let ilosc = Int(readLine()!)
-let ilosc = 2
-var student : [Student] = [ilosc]
-let start = 0
-/*
-    while start<ilosc{
-    let student[start].imie = readLine()
-    let student[start].nazwisko = readLine()
-    let student[start].rok_urodzenia = readLine()
-    let student[start].nr_indeksu = readLine()
-    let student[start].kierunek = readLine()
-    let student[start].rok_studiow = readLine()
-    let student[start].o1 = readLine()
-    let student[start].o2 = readLine()
-    let student[start].o3 = readLine()
-    let student[start].o4 = readLine()
-    let student[start].o5 = readLine()
-    start++
-}
-for _ in 0..<liczba_studentow!{
-studenci.append(Student(imie: imie!, nazwisko: nazwisko!, rok_urodzenia: rok_urodzenia!, index: index!, kierunek: Kierunek.Informatyka, rok_studiow: rok_studiow!, oceny: oceny))
-*/
+let ilosc = Int(readLine()!)
 
+var studenci : [Student]=[]
+
+
+for _ in 0..<ilosc!{
+
+studenci.append(Student(imie: imie!, nazwisko: nazwisko!, rok_urodzenia: rok_urodzenia!, index: index!, kierunek: kierunek.Informatyka, rok_studiow: rok_studiow!, oceny: oceny))
+}
