@@ -196,5 +196,7 @@ let start = 0
     let student[start].o5 = readLine()
     start++
 }
+for _ in 0..<liczba_studentow!{
+studenci.append(Student(imie: imie!, nazwisko: nazwisko!, rok_urodzenia: rok_urodzenia!, index: index!, kierunek: Kierunek.Informatyka, rok_studiow: rok_studiow!, oceny: oceny))
 */
 
