@@ -127,3 +127,33 @@ else {
 }
 
 */
+/*
+//zad 3.4
+let str1 = String(readLine()!)
+let str2 = String(readLine()!)
+if str1 == str2
+{
+    print("sa identyczne")
+}
+else{
+     print("nie sa identyczne")
+}
+print("prosze podac prefiks")
+let str3 = String(readLine()!)
+
+if str1.hasPrefix(str3)
+{
+print("Ciąg: \(str1) zawiera prefiks \(str3)" )
+}
+
+
+print("prosze podac sufiks")
+let str4 = String(readLine()!)
+
+if str1.hasPrefix(str4) {
+print("Ciąg: \(str1) zawiera prefix \(str4)" )
+}
+if str1.hasSuffix(str4) {
+print("Ciąg: \(str1) zawiera suffix \(str4)" )
+}
+*/
