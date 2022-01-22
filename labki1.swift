@@ -180,3 +180,16 @@ print("wiek",((rok!-rok!%100)/100))
 default: print("Podałeś liczbę spoza zakresu")
 }
 */
+
+/*
+// zad 4.3
+let srednia = Double(readLine()!)
+
+switch (srednia!){
+case 4.5..<6: print("Twoje stypendium to 200")
+case 4.0..<4.5: print("Twoje stypendium to 150")
+case 3.0..<4.0: print("Twoje stypendium to 100")
+case 0..<3.0: print("Twoje stypendium to 0")
+default: print("Srednia nie spelnia warunkow zadania")
+}
+*/
