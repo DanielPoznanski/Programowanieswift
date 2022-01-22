@@ -101,12 +101,14 @@ print(imie, "NIE zaczyna sie na litere D")
 
 
 /*   zad 3.3
+
 let ciag:String = String(readLine()!)
 let znak:Character = Character(readLine()!)
 //let ciag = String(readLine()!)
 let ostatnia = ciag.index(before: ciag.endIndex)
 var miejsce = Int(readLine()!)
 var szukany = ciag.index(ciag.startIndex, offsetBy: miejsce!-1)
+var szukany2 = ciag.index(ciag.endIndex, offsetBy: -miejsce!)
 
 if ciag[ciag.startIndex] == znak{
                                  print ( " Litera jest na poczatku ")
@@ -115,7 +117,10 @@ if ciag[ostatnia]==znak{
                         print ("Litera jest na koncu")
 }
 if ciag[szukany] == znak {
-                                             print ("znak znajduje sie na podanym miejscu")
+                                             print ("znak znajduje sie na podanym miejscu od poczatku")
+}
+if ciag[szukany2] == znak {
+                                             print ("znak znajduje sie na podanym miejscu od konca")
 }
 else {
       print("Podany znak nie spelnia warunkow zadania")
