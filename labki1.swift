@@ -171,3 +171,12 @@ else
 }
 
 */
+/*
+// zad 4.2
+let rok = Int(readLine()!)
+switch (rok!){
+case 2 ..< 3011:
+print("wiek",((rok!-rok!%100)/100))
+default: print("Podałeś liczbę spoza zakresu")
+}
+*/
