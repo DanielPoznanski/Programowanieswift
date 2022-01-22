@@ -193,3 +193,32 @@ case 0..<3.0: print("Twoje stypendium to 0")
 default: print("Srednia nie spelnia warunkow zadania")
 }
 */
+/*
+// zad 4.4
+print("podaj 2 liczby calkowite")
+let liczba1 = Int(readLine()!)
+let liczba2 = Int(readLine()!)
+
+let mstr = """
+Podaj dzialanie
+
+1.Dodawanie
+2.Odejmowanie
+3.Mnozenie
+4.Dzielenie
+"""
+print (mstr)
+
+let akcja = Int(readLine()!)
+
+switch (akcja!){
+    case 1: print("wynik dodawania : ",(liczba1!+liczba2!))
+    case 2: print("wynik odejmowania : ",(liczba1!-liczba2!))
+    case 3: print("wynik mnozenia : ",(liczba1!*liczba2!))
+    case 4: if(liczba1 != 0 && liczba2 != 0){
+    print("wynik dzielenia : ",(liczba1!/liczba2!))
+    }
+else{print ("Nie wolno dzielic przez 0!")}
+default: print("cos poszlo nie tak")
+}
+*/
