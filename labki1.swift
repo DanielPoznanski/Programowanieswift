@@ -216,7 +216,7 @@ switch (akcja!){
     case 2: print("wynik odejmowania : ",(liczba1!-liczba2!))
     case 3: print("wynik mnozenia : ",(liczba1!*liczba2!))
     case 4: if(liczba1 != 0 && liczba2 != 0){
-    print("wynik dzielenia : ",(liczba1!/liczba2!))
+    print("wynik dzielenia : ",(Double(liczba1!)/Double(liczba2!)))
     }
 else{print ("Nie wolno dzielic przez 0!")}
 default: print("cos poszlo nie tak")
