@@ -157,3 +157,17 @@ if str1.hasSuffix(str4) {
 print("Ciąg: \(str1) zawiera suffix \(str4)" )
 }
 */
+/*
+//zad 4.1
+let rok = Int(readLine()!)
+
+if(rok!%4 == 0 && rok!%100 != 0)
+{
+    print("Rok",rok!, "jest przestepny")
+}
+else
+{
+    print("Rok",rok!, "nie jest przestepny")
+}
+
+*/
