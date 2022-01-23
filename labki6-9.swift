@@ -150,6 +150,7 @@ func starszy2(_ n: Int,_ m: Int){
 print(starszy2(o1.rok1,o2.rok2))
 
 */
+/*
 // zad 9.1
 struct liczbaZespolona {
 var rzeczywista: Int
@@ -170,33 +171,73 @@ func odejmowanie(L1:liczbaZespolona,L2:liczbaZespolona){
     var wynik = liczbaZespolona(rzeczywista:0, urojona:0)
     wynik.rzeczywista = L1.rzeczywista-L2.rzeczywista
     wynik.urojona = L1.urojona - L2.urojona
-  print("Odejmowanie",wynik.rzeczywista,"-", wynik.urojona,"i")
+  print("Odejmowanie",wynik.rzeczywista,"+", wynik.urojona,"i")
 }
 func mnozenie(L1:liczbaZespolona,L2:liczbaZespolona){
     var wynik = liczbaZespolona(rzeczywista:0, urojona:0)
     wynik.rzeczywista = L1.rzeczywista*L2.rzeczywista
     wynik.urojona = L1.urojona * L2.urojona
-  print("Mnozenie",wynik.rzeczywista,"*", wynik.urojona,"i")
+  print("Mnozenie",wynik.rzeczywista,"+", wynik.urojona,"i")
 }
 }
 
-var w : Int = 10
+let w : Int = 10
 while w != 0{
 print("Podaj pierwsza liczbe")
-var r1 = Int(readLine()!)
-var u1 = Int(readLine()!)
-var L1 = liczbaZespolona (rzeczywista:r1!, urojona:u1!)
+let r1 = Int(readLine()!)
+let u1 = Int(readLine()!)
+let L1 = liczbaZespolona (rzeczywista:r1!, urojona:u1!)
   
 print("Podaj druga liczbe")
-var r2 = Int(readLine()!)
-var u2 = Int(readLine()!)
-var L2 = liczbaZespolona (rzeczywista:r2!, urojona:u2!)
+let r2 = Int(readLine()!)
+let u2 = Int(readLine()!)
+let L2 = liczbaZespolona (rzeczywista:r2!, urojona:u2!)
 
 print("Podaj dzialanie 1.Dodawanie, 2.Odejmowanie, 3.Mnozenie, 0.Wyjdz")
 
-var w = Int(readLine()!)
+let w = Int(readLine()!)
 if w==1 {L1.dodaj(L1:L1,L2:L2)}
 else if w==2 {L1.odejmowanie(L1:L1,L2:L2)}
 else if w==3 {L1.mnozenie(L1:L1,L2:L2)}
 else if w==0 {break}
 }
+*/
+//zadanie 9.2
+struct loty{
+    var miejsce=[Int : String]()
+    var cel = [Int : String]()
+    var czas: Double
+}
+loty=[][];
+var i = readLine()!
+while i >=0{
+var s = readLine()!
+var z = readLine()!
+loty.insert(s,z)
+i--
+}
+
+/*
+//Zadanie 9.3
+var samochody=Set<String>()
+samochody=[]
+samochody.insert("Fiat")
+samochody.insert("Audi")
+samochody.insert("BMW")
+samochody.insert("Opel")
+samochody.insert("Citroen")
+if samochody.isEmpty {
+print("Zbiór jest pusty")
+}
+else {
+print(samochody)
+}
+var s = readLine()!
+if let samochodydoUsuniecia = samochody.remove(s) {
+print("Można usunąć \(samochodydoUsuniecia)")
+print(samochody)
+}
+else {
+print("Element do usunięcia nie istnieje")
+}
+*/ 
