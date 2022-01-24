@@ -227,33 +227,67 @@ else if w==3 {L1.mnozenie(L1:L1,L2:L2)}
 else if w==0 {break}
 }
 */
+
+
 //zadanie 9.2
-struct loty{
+
+struct Loty{
     var miejsce = [Int : String]()
     var cel = [Int : String]()
     var czas: Double
 
-  init(miejsce: [Int:String], cel:[Int:String],czas:Double ) {
+  init(miejsce: [Int:String], cel: [Int:String],czas:Double ) {
   self.miejsce = miejsce
   self.cel = cel
   self.czas = czas
 }
 
-func podajLoty()->[loty]{
+func wyswietl(){
+                print("""
+                      Lotnisko startu: \(miejsce)
+                      Lotnisko docelowe: \(cel)
+                      Czas lotu : \(czas)                     
+                      """)
+}
+}
+
+func podajLoty()->[Loty]{
+  var loty: [Loty] = []
+  var nr1: Int?
+  var nazwa1: String?
+  var nr2: Int?
+  var nazwa2: String?
+  var czas: Double?
+
                          
   print("Podaj liczbe lotow")
-  var ilosc = Int(readLine()!)
+  let ilosc = Int(readLine()!)
   for _ in 0..<ilosc!{
-    print("Podaj nr lotniska")
-    let nr = Int(readLine()!)
-    print("Podaj nazwe lotniska")
-    let nazwa = String(readLine()!)
-    miejsce[nr!] = nazwa
+    print("Podaj nr lotniska startu")
+    nr1 = Int(readLine()!)
+    print("Podaj nazwe lotniska startu")
+    nazwa1 = String(readLine()!)
+    print("Podaj nr lotniska celu")
+    nr2 = Int(readLine()!)
+    print("Podaj nazwe lotniska celu")
+    nazwa2 = String(readLine()!)
+    print("Podaj czas lotu")
+    czas = Double(readLine()!)
+    loty.append(Loty(miejsce:[nr1!:nazwa1!],cel:[nr2!:nazwa2!],czas:czas!))
   }
-}
+return loty
 }
 
 
+func loty(){
+  let loty: [Loty] = podajLoty()
+  for i in loty{
+                i.wyswietl()
+  }
+  
+}
+
+loty()
 /*
 //Zadanie 9.3
 var samochody=Set<String>()
