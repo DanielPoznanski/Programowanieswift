@@ -56,34 +56,48 @@ print(tab[x!-1])
 */
 
 /* 
-//zad 6.3 - polecenie 2 i 3 nie dziala
-var tab: [Int] = []
-print ("Podaj ilosc elementow tablicy")
-var x = Int(readLine()!)
-for _ in 1...x!{
-  print ("Podaj wartosc tablicy")
-  let y = Int(readLine()!)
-           tab.append(y!)
+//zad 6.3 
+var tab3:[Int] = []
+print("Podaj ilosc elementow tablicy")
+var tabSize2 = Int(readLine()!)!
+tabSize2 = tabSize2-1
+for i in 0...tabSize2{
+print("Podaj element tablicy: ")
+let newVal = Int(readLine()!)!
+tab3.insert(newVal, at: i)
 }
-
-var dlugosc : Int = 0
-var max_dlugosc : Int = 0
-var start : Int = 0
-
-for i in tab{
-  if(tab[i-1]<tab[i]){
-                      dlugosc+=1
-  
-  }
-  if (dlugosc >= max_dlugosc){
-                                max_dlugosc = dlugosc
-  }
-else{
-     dlugosc = 1
+var poz = 0
+var dl = 1
+var dlMax = 0
+for i in 0...tabSize2-1 {
+if(tab3[i] < tab3[i + 1])
+{
+dl += 1
+} else {
+if(dl > dlMax)
+{
+dlMax = dl
+poz = i - dl + 1
 }
-for in 0...max_dlugosc{
-                       print(tab[start!+i])
+dl = 1
 }
+}
+if(dl > dlMax) {
+dlMax = dl
+poz = tabSize2 - dl + 1
+}
+print("Dlugosc ciagu: ", dlMax)
+print("Pozycja ciagu: ", poz)
+var ok = true
+for i in 0...tabSize2-1 {
+if(tab3[i] < tab3[i+1]) {
+ok = false
+}
+}
+if(ok) {
+print("Elementy tworza ciag malejacy")
+} else {
+print("Elementy nie tworza ciagu malejacego")
 }
 */
 /*
