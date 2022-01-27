@@ -54,31 +54,7 @@ print(tab[0])
 print ("Najwieksza wartosc")
 print(tab[x!-1])
 */
-/*
-//zad6.2
-print("Podaj ilosc elementow")
-let n = Int(readLine()!)!
-var tabInt: [Int] = []
-for i in 0...n-1 {
-    print("Podaj \(i+1) element")
-    tabInt.append(Int(readLine()!)!)
-}
 
-print("Podaj szukana wartosc")
-
-let s = Int(readLine()!)!
-if( s==tabInt[0]) {print("pierwszy element")}
-else if (s==tabInt[n-1]){ print("ostatni element")}
-else{print("ani pierwszy ani ostatni")}
-tabInt.sort()//domyślne sortowanie rosnące
-
-for i in tabInt{
-    print(i)
-}
-
-print("najmniejszy \(tabInt.min()!)")
-print("najwiekszy \(tabInt.max()!)")
-*/
 /* 
 //zad 6.3 - polecenie 2 i 3 nie dziala
 var tab: [Int] = []
