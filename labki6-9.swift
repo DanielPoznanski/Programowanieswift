@@ -130,6 +130,64 @@ print (znajdz(liczba:liczba!,szukana:szukana!))
 }
 */
 /*
+//zad 7.2
+func uniqueElements(tab1: [Int], tab2:
+[Int]) -> [Int] {
+let tmpArray = tab1 + tab2
+var uniqueValues: [Int] = []
+for item in tmpArray {
+if(uniqueValues.contains(item)
+== false) {
+uniqueValues.append(item)
+}
+}
+return uniqueValues
+}
+print("Zadanie 7.2")
+print("Tablica unikalnych wartosci")
+var uniqueArr = uniqueElements(tab1:
+[1,2,3,4], tab2: [2,3,5,6,7,8])
+for i in uniqueArr {
+print(i)
+}
+func getElements() -> [Int] {
+var tab:[Int] = []
+print("Podaj ilosc elementow tablicy")
+let tabSize = Int(readLine()!)!
+for i in 0...tabSize {
+print("Podaj element tablicy:")
+let newVal = Int(readLine()!)!
+tab.insert(newVal, at: i)
+}
+return tab
+}
+print("Podaj dlugosc pierwszego ciagu:")
+let firstLen = Int(readLine()!)!
+var d1: [Int] = []
+var i = 0;
+while(i < firstLen) {
+print("Podaj liczbe ciagu: ")
+let element = Int(readLine()!)!
+d1.append(element)
+i += 1
+}
+print("Podaj dlugosc drugiego ciagu:")
+let secondLen = Int(readLine()!)!
+var d2: [Int] = []
+i = 0;
+while(i < secondLen) {
+print("Podaj liczbe ciagu: ")
+let element = Int(readLine()!)!
+d2.append(element)
+i += 1
+}
+print("Unikalne wartosci ciagow")
+for i in uniqueElements(tab1: d1,
+tab2: d2) {
+print(i)
+}
+*/
+/*
 //zad 8.1
 var o1 = (imie1: "Jan", nazwisko1: "Kowalski", rok1: 1992)
 var o2 = (imie2: "Adam", nazwisko2: "Nowak", rok2: 1980)
